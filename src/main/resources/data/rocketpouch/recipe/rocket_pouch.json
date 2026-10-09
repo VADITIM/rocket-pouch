@@ -4,12 +4,12 @@
   "key": {
     "T": "minecraft:spire_armor_trim_smithing_template",
     "S": "minecraft:shulker_shell",
-    "N": "minecraft:netherite_ingot",
+    "B": "minecraft:bundle",
     "F": "minecraft:flint"
   },
   "pattern": [
     "TS ",
-    " N ",
+    " B ",
     " SF"
   ],
   "result": {
