@@ -1,3 +1,3 @@
-# 1.1.0
+# 1.1.1
 
-- The recipe takes a bundle in the middle instead of a netherite ingot.
+- New recipe: Spire trim over a bundle over shulker shell, flint, shulker shell.

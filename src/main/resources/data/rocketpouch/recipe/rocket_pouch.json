@@ -8,9 +8,9 @@
     "F": "minecraft:flint"
   },
   "pattern": [
-    "TS ",
+    " T ",
     " B ",
-    " SF"
+    "SFS"
   ],
   "result": {
     "id": "rocketpouch:rocket_pouch"
