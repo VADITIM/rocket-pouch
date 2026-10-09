@@ -34,6 +34,10 @@ Spire Armor Trim, Shulker Shell, Bundle, Shulker Shell, Flint - shaped as shown.
 - Fabric API
 - Java 25 or newer
 
+## Download
+
+Every push to `master` publishes a release with the jar: [Releases](https://github.com/VADITIM/rocket-pouch/releases). The version is `version` in `gradle.properties`, and the release text is `RELEASE_NOTES.md`.
+
 ## Building
 
 ```

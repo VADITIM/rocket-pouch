@@ -1,0 +1,52 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# Two pushes in quick succession both publish the same release; without this the older run can finish last and overwrite the newer jar.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build jar
+        run: |
+          ./gradlew build 2>&1 | tee build.log
+          if [ "${PIPESTATUS[0]}" -ne 0 ]; then echo "=== COMPILER ERRORS ==="; grep -E 'error:' build.log; exit 1; fi
+          version=$(sed -n 's/^version=//p' gradle.properties)
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+          mkdir -p out
+          cp "build/libs/rocketpouch-$version.jar" "out/rocketpouch-v$version.jar"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rocketpouch
+          path: out/
+
+      # One release per version, tagged v<version>, its text the short changelog in RELEASE_NOTES.md. Bump version in gradle.properties with every change; a push that keeps the version replaces that release.
+      - name: Publish release
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete "v$VERSION" --cleanup-tag --yes || true
+          gh release create "v$VERSION" "out/rocketpouch-v$VERSION.jar" \
+            --target "$GITHUB_SHA" \
+            --title "v$VERSION" \
+            --notes-file RELEASE_NOTES.md
