@@ -9,7 +9,7 @@
   },
   "pattern": [
     " T ",
-    " B ",
+    "SBS",
     "SFS"
   ],
   "result": {

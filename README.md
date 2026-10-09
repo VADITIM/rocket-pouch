@@ -10,7 +10,7 @@ The Rocket Pouch holds up to **320 firework rockets** (5 stacks) in a single slo
 
 ![Rocket Pouch recipe](docs/recipe.png)
 
-Spire Armor Trim over a Bundle over Shulker Shell, Flint, Shulker Shell - shaped as shown.
+Spire Armor Trim at the top, a Bundle in the middle, a Flint at the bottom, and Shulker Shells on both sides of the Bundle and the Flint - shaped as shown.
 
 ## Usage
 
