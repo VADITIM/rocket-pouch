@@ -1,0 +1,5 @@
+{
+  "item.rocketpouch.rocket_pouch": "Rocket Pouch",
+  "item.rocketpouch.rocket_pouch.empty": "Empty",
+  "item.rocketpouch.rocket_pouch.count": "%s / %s Rockets"
+}

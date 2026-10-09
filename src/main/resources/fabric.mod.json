@@ -1,0 +1,19 @@
+{
+	"schemaVersion": 1,
+	"id": "rocketpouch",
+	"version": "${version}",
+	"name": "Rocket Pouch",
+	"description": "A pouch that holds 320 firework rockets and works like a rocket while it has any.",
+	"authors": ["vadim"],
+	"icon": "assets/rocketpouch/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["dev.vadim.rocketpouch.RocketPouch"]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

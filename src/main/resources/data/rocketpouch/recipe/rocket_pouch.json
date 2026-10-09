@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "T": "minecraft:spire_armor_trim_smithing_template",
+    "S": "minecraft:shulker_shell",
+    "N": "minecraft:netherite_ingot",
+    "F": "minecraft:flint"
+  },
+  "pattern": [
+    "TS ",
+    " N ",
+    " SF"
+  ],
+  "result": {
+    "id": "rocketpouch:rocket_pouch"
+  }
+}
